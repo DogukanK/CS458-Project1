@@ -9,6 +9,9 @@ const inputWrapperEmail = document.getElementById("input-wrapper-email")
 const inputWrapperPassword = document.getElementById("input-wrapper-password")
 const warningEmail = document.getElementById("warningEmail")
 const warningPassword = document.getElementById("warningPassword")
+const emails = ["dogukanertunga@gmail.com", "123456789", "test@test.com"];
+const pass = ["1234", "qwe321", "aaa"];
+
 
 const inputOnBlur = (ev) =>{
     if(inputTouched.email){
@@ -45,4 +48,34 @@ const validateEmail = email => {
 const validatePhone = email => {
     const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     return re.test(String(email).toLowerCase());
+}
+
+const rememberCheck = document.getElementById("rememberMe");
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+    rememberCheck.setAttribute("checked", "checked");
+  inputEmail.value = localStorage.username;
+} else {
+    rememberCheck.removeAttribute("checked");
+  inputEmail.value = "";
+}
+
+function unutamaBeni() {
+  if (rememberCheck.checked && inputEmail.value !== "") {
+    localStorage.username = inputEmail.value;
+    localStorage.checkbox = rememberCheck.value;
+  } else {
+    localStorage.username = "";
+    localStorage.checkbox = "";
+  }  
+}
+
+function isUserRegistered() {
+    const isEmailRegistered = emails.includes(inputEmail.value);
+    const isPasswordRegistered = pass.includes(inputPassword.value);
+    console.log(isEmailRegistered, isPasswordRegistered);
+    console.log(inputEmail.value, inputPassword.value);
+    if(isEmailRegistered && isPasswordRegistered){
+            document.location.href = '/mainPage.html';
+    }
 }
