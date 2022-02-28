@@ -19,47 +19,46 @@
         </div>
         <div class="login-div">
             <form class="login" onsubmit="isUserRegistered()">
-                <h1>Oturum Aç</h1>
-                <div id = "err" style = "display:none" data-uia="error-message-container" class="ui-message-container ui-message-error"><div class="ui-message-icon"></div><div data-uia="text" class="ui-message-contents"><b>Parola yanlış.</b> Lütfen yeniden deneyin ya da <a href="https://www.netflix.com/tr/loginHelp">parolanızı sıfırlayın</a>.</div></div>
-                <div id = "errNotFind" style = "display:none" data-uia="error-message-container" class="ui-message-container ui-message-error"><div class="ui-message-icon"></div><div data-uia="text" class="ui-message-contents"><b>Bu e‑posta adresi ile bağlantılı bir hesap bulamadık.</b> Lütfen yeniden deneyin ya da <a href="hhttps://www.netflix.com/tr-en/">yeni bir hesap oluşturun</a>.</div></div>
+                <h1>Sign In</h1>
+                <div id = "err" style = "display:none" data-uia="error-message-container" class="ui-message-container ui-message-error"><div class="ui-message-icon"></div><div data-uia="text" class="ui-message-contents"><b>Incorrect password.</b> Please try again or you can <a href="https://www.netflix.com/tr/loginHelp">reset your password</a>.</div></div>
+                <div id = "errNotFind" style = "display:none" data-uia="error-message-container" class="ui-message-container ui-message-error"><div class="ui-message-icon"></div><div data-uia="text" class="ui-message-contents"><b>Sorry, we can't find an account with this email address.</b> Please try again or <a href="hhttps://www.netflix.com/tr-en/">create a new account</a>.</div></div>
                 <div class="input-text">
-                    <input type="text" id="inputEmail" name="email" placeholder="E-posta veya telefon numarası" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
+                    <input type="text" id="inputEmail" name="email" placeholder="E-mail or phone number" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
                     <div class="warning-input" id="warningEmail">
-                        Lütfen geçerli bir telefon numarası veya e‑posta adresi girin.
+                        Please enter a valid email or phone number.
                     </div>
                 </div>
                 
                 <div class="input-text">
-                    <input type="password" id="inputPassword" name="password" placeholder="Parola" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
+                    <input type="password" id="inputPassword" name="password" placeholder="Password" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
                     <div class="warning-input" id="warningPassword">
-                        Parolanız 4 ila 60 karakter olmalıdır.
+                        Your password must contain between 4 and 60 characters.
                     </div>
                 </div>
                 
                 <div>
-                    <input class="signin-button" type="submit" value="Oturum Aç" onclick="unutamaBeni()">
+                    <input class="signin-button" type="submit" value="Sign In" onclick="unutamaBeni()">
                 </div>
                 <div class="remember-flex">
                     <div>
                         <input type="checkbox" value="unutamaBeni" id= "rememberMe">
-                        <label class="color_text">Beni hatırla</label>
+                        <label class="color_text">Remember me</label>
                     </div>
                     <div class="help">
-                        <a class="color_text" href="https://www.netflix.com/tr/LoginHelp">Yardım ister misiniz?</a>
+                        <a class="color_text" href="https://www.netflix.com/tr/LoginHelp">Need help?</a>
                     </div>
                 </div>
                 <div class="login-face">
-                    <!--<img src="img/fb-icon.png" height="20"/><a href="#" class="color_link log_face">Facebook ile Oturum Aç</a>-->
                     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                        Facebook ile Oturum Aç
+                        Login with Facebook
                     </fb:login-button>
 
                 </div>
                 <div class="new-members">
-                    Netflix'e katılmak ister misiniz? <a href="https://www.netflix.com/tr" class="signup-link">Şimdi kaydolun</a>.
+                    New to Netflix? <a href="https://www.netflix.com/tr" class="signup-link">Sign up now</a>.
                 </div>
                 <div class="protection color_link help">
-                    Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA tarafından korunuyor.. <a href="https://policies.google.com/privacy">Daha fazlasını öğrenin.</a>
+                    This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="https://policies.google.com/privacy">Learn more.</a>
                 </div>
             </form>
             
@@ -67,46 +66,47 @@
     </div>
     <div class="bottom">
         <div class="bottom-width">
-            Sorularınız mı var? <a href="tel:0850-390-7444" class="tel-link">0850-390-7444</a> numaralı telefonu arayın
+            Questions? Call <a href="tel:0850-390-7444" class="tel-link">0850-390-7444</a>
             <div>
                 <ul class="bottom-flex">
                     <li class="list-bottom">
                         <a href="#" class="link-bottom">
-                            SSS
+                            FAQ
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="#" class="link-bottom">
-                            Yardım Merkezi
+                            Help Center
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="#" class="link-bottom">
-                            Kullanım Koşulları
+                            Terms of Use
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="#" class="link-bottom">
-                            Gizlilik
+                            Privacy
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="#" class="link-bottom">
-                            Çerez Tercihleri
+                            Cookie Preferences
                         </a>
                     </li>
                     <li class="list-bottom">
                         <a href="#" class="link-bottom">
-                            Kurumsal Bilgiler
+                            Corporate Information
                         </a>
                     </li>
                 </ul>
             </div>
             <div>
                 <select class="fa select-language" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                    <option value="index.html"> &#xf0ac; &nbsp;&nbsp;&nbsp;Türkçe</option>
                     <option value="indexEng.html"> &#xf0ac; &nbsp;&nbsp;&nbsp;English</option>
+                    <option value="index.html"> &#xf0ac; &nbsp;&nbsp;&nbsp;Türkçe</option>
                 </select>
+                
             </div>
         </div>
     </div>

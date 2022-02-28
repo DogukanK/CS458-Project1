@@ -71,19 +71,30 @@ function unutamaBeni() {
 }
 
 function isUserRegistered() {
-    var text = document.getElementById("error");
-    for(let i = 0; i < emails.length; i++){         // Check if the user email is registered.
-        if(emails[i] === inputEmail.value){         // If the user email is registered, then check if the password is correct.
-            if(pass[i] === inputPassword.value){    // If the password is correct, then proceed to the main page.
-                document.location.href = '/mainPage.html';      
-            }
-            else{
-                err.style.display = "block";    // If the password is incorrect, then display the error message.
-                console.log("Wrong credentials");
-            }
-        }
-    }       
+    var err1 = document.getElementById("err");
+    var err2 = document.getElementById("errNotFind");
+    var un = emails.indexOf(inputEmail.value);
+    var pw = pass.indexOf(inputPassword.value);
+    let isUser = false;
+    if(un == -1){           //User not found.
+        err2.style.display="block"
+        console.log("User not found");
+
+    }
+    else if(un != pw){      //User found but password is wrong.
+        err1.style.display="block"
+        isUser = true;
+        console.log("Wrong credentials");
+
+    }
+    else if(un == pw){      //User found, credentials are correct.
+        isUser = true;
+        document.location.href = '/mainPage.html'; 
+    }
+    return isUser;
 }
+
+
 let is_form_checked = false;
 document.addEventListener('submit', e => {
     if(!is_form_checked) {
