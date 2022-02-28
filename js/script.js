@@ -104,10 +104,11 @@ document.addEventListener('submit', e => {
   function checkLoginState() {               // Called when a person is finished with the Login Button.
     FB.getLoginStatus(function(response) {   // See the onlogin handler
       statusChangeCallback(response);
-    });
-    successLogin();
+      if(response.status == 'connected'){    // If facebook login is successful, then proceed to the main page.
+        successLogin(); 
+    }
+    });    
   }
-  
   
   window.fbAsyncInit = function() {
     FB.init({
@@ -135,5 +136,5 @@ document.addEventListener('submit', e => {
   }
 
   function successLogin() {
-    document.location.href = '/mainPage.html'  
+    document.location.href = 'mainPage.html'  
     }
