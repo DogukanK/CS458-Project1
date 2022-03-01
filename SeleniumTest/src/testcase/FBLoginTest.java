@@ -87,8 +87,8 @@ public class FBLoginTest {
         }
 
         // Perform the actions on new window
-        driver.findElement(By.id("email")).sendKeys("sarpkaya2000@gmail.com");
-        driver.findElement(By.id("pass")).sendKeys("Never/Forget73");
+        driver.findElement(By.id("email")).sendKeys("samplemail@gmail.com");
+        driver.findElement(By.id("pass")).sendKeys("sample/passWord");
         driver.findElement(By.id("loginbutton")).click();
         
         sleepFor(3000);
