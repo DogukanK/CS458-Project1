@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="img/logo.png">
+    <title>Netflix</title>
+    
+</head>
+<body>
+    <div class="upper">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Netflix-Logo.png" class="img-logo"/>
+            </a>
+        </div>
+        <div class="login-div">
+            <form class="login" onsubmit="isUserRegistered()">
+                <h1>Oturum Aç</h1>
+                <div id = "err" style = "display:none" data-uia="error-message-container" class="ui-message-container ui-message-error"><div class="ui-message-icon"></div><div data-uia="text" class="ui-message-contents"><b>Parola yanlış.</b> Lütfen yeniden deneyin ya da <a href="https://www.netflix.com/tr/loginHelp">parolanızı sıfırlayın</a>.</div></div>
+                <div id = "errNotFind" style = "display:none" data-uia="error-message-container" class="ui-message-container ui-message-error"><div class="ui-message-icon"></div><div data-uia="text" class="ui-message-contents"><b>Bu e‑posta adresi ile bağlantılı bir hesap bulamadık.</b> Lütfen yeniden deneyin ya da <a href="hhttps://www.netflix.com/tr-en/">yeni bir hesap oluşturun</a>.</div></div>
+                <div class="input-text">
+                    <input type="text" id="inputEmail" name="email" placeholder="E-posta veya telefon numarası" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
+                    <div class="warning-input" id="warningEmail">
+                        Lütfen geçerli bir telefon numarası veya e‑posta adresi girin.
+                    </div>
+                </div>
+                
+                <div class="input-text">
+                    <input type="password" id="inputPassword" name="password" placeholder="Parola" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
+                    <div class="warning-input" id="warningPassword">
+                        Parolanız 4 ila 60 karakter olmalıdır.
+                    </div>
+                </div>
+                
+                <div>
+                    <input class="signin-button" type="submit" value="Oturum Aç" onclick="unutamaBeni()">
+                </div>
+                <div class="remember-flex">
+                    <div>
+                        <input type="checkbox" value="unutamaBeni" id= "rememberMe">
+                        <label class="color_text">Beni hatırla</label>
+                    </div>
+                    <div class="help">
+                        <a class="color_text" href="https://www.netflix.com/tr/LoginHelp">Yardım ister misiniz?</a>
+                    </div>
+                </div>
+                <div class="login-face">
+                    <!--<img src="img/fb-icon.png" height="20"/><a href="#" class="color_link log_face">Facebook ile Oturum Aç</a>-->
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                        Facebook ile Oturum Aç
+                    </fb:login-button>
+
+                </div>
+                <div class="new-members">
+                    Netflix'e katılmak ister misiniz? <a href="https://www.netflix.com/tr" class="signup-link">Şimdi kaydolun</a>.
+                </div>
+                <div class="protection color_link help">
+                    Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA tarafından korunuyor.. <a href="https://policies.google.com/privacy">Daha fazlasını öğrenin.</a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-width">
+            Sorularınız mı var? <a href="tel:0850-390-7444" class="tel-link">0850-390-7444</a> numaralı telefonu arayın
+            <div>
+                <ul class="bottom-flex">
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            SSS
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Yardım Merkezi
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Çerez Tercihleri
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Kurumsal Bilgiler
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <select class="fa select-language" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                    <option value="index.html"> &#xf0ac; &nbsp;&nbsp;&nbsp;Türkçe</option>
+                    <option value="indexEng.html"> &#xf0ac; &nbsp;&nbsp;&nbsp;English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+</body>
+</html>
